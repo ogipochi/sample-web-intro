@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像アップローダー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>画像アップローダー</h1>
+        <p>アップロードしたい画像を選択してください。</p>
+        
+        <div class="upload-area">
+            <input type="file" id="image-selector" accept="image/*">
+            <label for="image-selector" class="upload-button">
+                画像を選択
+            </label>
+        </div>
+        
+        <div class="preview-area">
+            <img id="image-preview" src="" alt="アップロードされた画像">
+            <p id="file-info"></p>
+        </div>
+        
+        <div class="action-area">
+            <button id="clear-button" class="action-button">クリア</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

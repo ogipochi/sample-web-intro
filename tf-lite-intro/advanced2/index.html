@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>姿勢推定AI - TensorFlow.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>姿勢推定AI 🏃‍♀️</h1>
+        <p>人物が写っている画像をアップロードして、姿勢を検出してみましょう。</p>
+        
+        <div class="upload-area">
+            <input type="file" id="image-selector" accept="image/*">
+            <label for="image-selector" class="upload-button">
+                画像を選択
+            </label>
+        </div>
+        
+        <div class="pose-container">
+            <img id="image-preview" src="" alt="">
+            <canvas id="canvas"></canvas>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>姿勢を推定中...</p>
+            </div>
+        </div>
+        
+        <div class="result-area">
+            <h2>推定結果</h2>
+            <div id="result">
+                <p class="placeholder">画像をアップロードすると、ここに結果が表示されます</p>
+            </div>
+            <div id="keypoints-info" class="keypoints-info"></div>
+        </div>
+        
+        <div class="controls">
+            <label class="toggle-label">
+                <input type="checkbox" id="show-skeleton" checked>
+                骨格を表示
+            </label>
+            <label class="toggle-label">
+                <input type="checkbox" id="show-keypoints" checked>
+                関節点を表示
+            </label>
+            <label class="toggle-label">
+                <input type="checkbox" id="show-labels" checked>
+                ラベルを表示
+            </label>
+        </div>
+        
+        <div class="action-area">
+            <button id="clear-button" class="action-button">別の画像を試す</button>
+        </div>
+        
+        <div class="info-section">
+            <h3>検出される関節点</h3>
+            <div class="keypoint-legend">
+                <div class="legend-item">
+                    <span class="legend-dot" style="background-color: #FF6B6B;"></span>
+                    <span>頭部（鼻、目、耳）</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot" style="background-color: #4ECDC4;"></span>
+                    <span>上半身（肩、肘、手首）</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot" style="background-color: #45B7D1;"></span>
+                    <span>下半身（腰、膝、足首）</span>
+                </div>
+            </div>
+            <p class="info-text">
+                PoseNetは17個の主要な関節点を検出し、人物の姿勢を推定します。
+                フィットネス、スポーツ分析、ゲーム、医療などの分野で活用されています。
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet@latest/dist/posenet.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

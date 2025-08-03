@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像認識AI - TensorFlow Lite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>画像認識AI 🤖</h1>
+        <p>認識したい画像をアップロードしてください。</p>
+        
+        <div class="upload-area">
+            <input type="file" id="image-selector" accept="image/*">
+            <label for="image-selector" class="upload-button">
+                画像を選択
+            </label>
+        </div>
+        
+        <div class="preview-area">
+            <img id="image-preview" src="" alt="アップロードされた画像">
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>AIモデルを読み込み中...</p>
+            </div>
+        </div>
+        
+        <div class="result-area">
+            <h2>認識結果</h2>
+            <div id="result">
+                <p class="placeholder">画像をアップロードすると、ここに結果が表示されます</p>
+            </div>
+        </div>
+        
+        <div class="action-area">
+            <button id="clear-button" class="action-button">別の画像を試す</button>
+        </div>
+    </div>
+    
+    <!-- TensorFlow.js と MobileNet モデルの読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.1/dist/mobilenet.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
