@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanta.js 高度な機能デモ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <h1>Vanta.js 高度な機能デモ</h1>
+    <p>インタラクティブな背景エフェクトの実装例</p>
+  </header>
+
+  <!-- エフェクト切り替えセクション -->
+  <section class="demo-section">
+    <div id="effect-switcher" class="vanta-container">
+      <div class="content">
+        <h2>エフェクト切り替えデモ</h2>
+        <div class="button-group">
+          <button class="effect-btn" onclick="changeEffect('WAVES')">波</button>
+          <button class="effect-btn" onclick="changeEffect('BIRDS')">鳥</button>
+          <button class="effect-btn" onclick="changeEffect('FOG')">霧</button>
+          <button class="effect-btn" onclick="changeEffect('NET')">ネット</button>
+          <button class="effect-btn" onclick="changeEffect('DOTS')">ドット</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 動的な色変更セクション -->
+  <section class="demo-section">
+    <div id="color-changer" class="vanta-container">
+      <div class="content">
+        <h2>動的な色変更</h2>
+        <div class="color-controls">
+          <input type="color" id="color-picker" value="#0099ff">
+          <button class="apply-btn" onclick="applyColor()">色を適用</button>
+        </div>
+        <p class="info">カラーピッカーで背景色を変更できます</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- マウス追従セクション -->
+  <section class="demo-section">
+    <div id="mouse-interactive" class="vanta-container">
+      <div class="content">
+        <h2>マウスインタラクション</h2>
+        <p>マウスを動かすとエフェクトが変化します</p>
+        <p class="info">左右の動きで点の数が変化</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 時間帯別エフェクト -->
+  <section class="demo-section">
+    <div id="time-based" class="vanta-container">
+      <div class="content">
+        <h2>時間帯別エフェクト</h2>
+        <p id="current-time"></p>
+        <div class="button-group">
+          <button class="time-btn" onclick="simulateTime(7)">朝 (7:00)</button>
+          <button class="time-btn" onclick="simulateTime(14)">昼 (14:00)</button>
+          <button class="time-btn" onclick="simulateTime(20)">夜 (20:00)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- レスポンシブ対応セクション -->
+  <section class="demo-section">
+    <div id="responsive-demo" class="vanta-container">
+      <div class="content">
+        <h2>レスポンシブ対応</h2>
+        <p>画面サイズに応じて自動調整されます</p>
+        <p class="info" id="screen-info"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- パフォーマンス最適化セクション -->
+  <section class="demo-section">
+    <div id="performance-demo" class="vanta-container">
+      <div class="content">
+        <h2>パフォーマンス設定</h2>
+        <div class="button-group">
+          <button class="perf-btn" onclick="setPerformance('low')">低負荷モード</button>
+          <button class="perf-btn" onclick="setPerformance('normal')">通常モード</button>
+          <button class="perf-btn" onclick="setPerformance('high')">高品質モード</button>
+        </div>
+        <p class="info" id="performance-info">現在: 通常モード</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <p>Vanta.js Advanced Features Demo - 2024</p>
+  </footer>
+
+  <!-- スクリプト読み込み -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+  
+  <script src="script.js"></script>
+</body>
+</html>
